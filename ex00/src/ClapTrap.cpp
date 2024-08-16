@@ -33,7 +33,80 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints
 	println("ClapTrap name constructor called with " << name << " value.");
 }
 
+bool ClapTrap::isAlive(void)
+{
+	if (this->_hitPoints <= 0)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool ClapTrap::hasEnergy(void)
+{
+	if (this->_energyPoints <= 0)
+	{
+		return false;
+	}
+	return true;
+}
+
 void ClapTrap::attack(const std::string& target)
 {
+	if (isAlive() == false)
+	{
+		println("ClapTrap " << this->_name << "can't attack cuz he's DED.");
+		return;
+	}
+	if (hasEnergy() == false)
+	{
+		println("ClapTrap " << this->_name << "can't attack cuz he has no energy");
+		return;
+	}
 
+	this->_energyPoints--;
+	println("ClapTrap " << this->_name << " attacks " << target << ", causing "
+		 << this->_attackDamage << " points of damage!");
+	return;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	if (isAlive() == false)
+	{
+		println("ClapTrap " << this->_name << " can't repair itself cuz he's DED.");
+		return;
+	}
+	if (hasEnergy() == false)
+	{
+		println("ClapTrap " << this->_name << " can't repair itself cuz he has no energy");
+		return;
+	}
+
+	this->_energyPoints--;
+	this->_hitPoints += amount;
+	println("ClapTrap " << this->_name << " repairs itself for "
+		 << amount << " hit points!");
+	return;
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	if (isAlive() == false)
+	{
+		println("ClapTrap " << this->_name << " is already DED.");
+		return;
+	}
+
+	this->_hitPoints -= amount;
+	println("ClapTrap " << this->_name << " receives " << amount << " damage!");
+	if (this->_hitPoints < 0)
+		this->_hitPoints = 0;
+	return;
+}
+
+void ClapTrap::setEnergy(int points)
+{
+	this->_energyPoints = points;
+	return;
 }
