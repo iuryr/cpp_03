@@ -20,6 +20,7 @@ public:
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	int getEnergy(void) const;
 	void setEnergy(int points);
 
 protected:

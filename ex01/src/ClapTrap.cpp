@@ -117,6 +117,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 	return;
 }
 
+int ClapTrap::getEnergy(void) const
+{
+	return this->_energyPoints;
+}
+
 void ClapTrap::setEnergy(int points)
 {
 	this->_energyPoints = points;

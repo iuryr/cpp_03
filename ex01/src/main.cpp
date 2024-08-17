@@ -23,7 +23,9 @@ int main(void)
 	s4.guardGate();
 
 	std::cout << std::endl;
+	println("s1 energy is " << s1.getEnergy());
 	s1.setEnergy(0);
+	println("s1 energy is " << s1.getEnergy());
 	s1.attack("Pyra");
 
 	
