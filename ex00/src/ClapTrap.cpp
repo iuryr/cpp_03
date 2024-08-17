@@ -110,3 +110,8 @@ void ClapTrap::setEnergy(int points)
 	this->_energyPoints = points;
 	return;
 }
+
+int ClapTrap::getEnergy(void) const
+{
+	return this->_energyPoints;
+}

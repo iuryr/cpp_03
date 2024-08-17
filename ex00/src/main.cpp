@@ -15,7 +15,9 @@ int main(void)
 	c3.takeDamage(20);
 
 	std::cout << std::endl;
+	println("c2 energy is " << c2.getEnergy());
 	c2.setEnergy(0);
+	println("c2 energy is " << c2.getEnergy());
 	c2.attack("Pyra");
 	c2.beRepaired(10);
 }
