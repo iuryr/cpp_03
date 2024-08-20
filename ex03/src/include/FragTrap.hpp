@@ -14,6 +14,8 @@ public:
 	FragTrap(std::string name);
 
 	void highFiveGuys(void);
+	void setHP(int hp);
+	void setAttackDamage(unsigned int points);
 };
 
 #endif //_FRAGTRAP_HPP_

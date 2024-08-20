@@ -15,6 +15,7 @@ public:
 
 	void attack(const std::string& target);
 	void guardGate(void);
+	void setEnergy(int points);
 };
 
 #endif //_SCAVTRAP_HPP_

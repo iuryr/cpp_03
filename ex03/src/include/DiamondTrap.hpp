@@ -23,6 +23,7 @@ public:
 	unsigned int getAttackDamage(void);
 
 	void attack(const std::string& target);
+	void whoAmI(void);
 
 private:
 	std::string _name;

@@ -49,3 +49,15 @@ void FragTrap::highFiveGuys(void)
 	println("FragTrap " << this->_name << " puts its hand up for a high five!");
 	return;
 }
+
+void FragTrap::setHP(int hp)
+{
+	this->_hitPoints = hp;
+	return ;
+}
+
+void FragTrap::setAttackDamage(unsigned int points)
+{
+	this->_attackDamage = points;
+	return;
+}

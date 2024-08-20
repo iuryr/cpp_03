@@ -3,9 +3,10 @@
 DiamondTrap::DiamondTrap(void)
 {
 	ClapTrap::_name = ClapTrap::_name + "_clap_name";
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 30;
+	FragTrap::setHP(100);
+	ScavTrap::setEnergy(50);
+	FragTrap::setAttackDamage(30);
+	this->_name = "DefaultName";
 	println("DiamondTrap default constructor called.");
 }
 
@@ -18,9 +19,9 @@ DiamondTrap::DiamondTrap(std::string name)
 {
 	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 30;
+	FragTrap::setHP(100);
+	ScavTrap::setEnergy(50);
+	FragTrap::setAttackDamage(30);
 	println("DiamondTrap name constructor called with name " << name);
 }
 
@@ -42,11 +43,17 @@ int DiamondTrap::getEnergy(void)
 
 void DiamondTrap::attack(const std::string& target)
 {
-	std::cout << "Calling overridden function" << std::endl;
+	// std::cout << "Calling overridden function" << std::endl;
 	ScavTrap::attack(target);
 }
 
 std::string DiamondTrap::getName(void) const
 {
 	return this->_name;
+}
+
+void DiamondTrap::whoAmI(void)
+{
+	println("My ClapTrap name is " << ClapTrap::_name);
+	println("My DiamondTrap name is " << _name);
 }

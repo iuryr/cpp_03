@@ -21,7 +21,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	virtual int getEnergy(void);
-	void setEnergy(int points);
+	virtual void setEnergy(int points);
 
 protected:
 	std::string _name;

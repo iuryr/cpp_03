@@ -68,3 +68,9 @@ void ScavTrap::guardGate(void)
 	println("ScavTrap " << this->_name << " is now in Gate keeper mode.");
 	return;
 }
+
+void ScavTrap::setEnergy(int points)
+{
+	this->_energyPoints = points;
+	return;
+}
