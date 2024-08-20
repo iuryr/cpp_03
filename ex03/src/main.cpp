@@ -48,4 +48,19 @@ int main(void)
 
 	println("whoAmI():");
 	d2.whoAmI();
+
+
+	println("");
+	println("### Copy Constructor and Assignment Operator Overload");
+	println("DiamondTrap d3(d2);");
+	DiamondTrap d3(d2);
+
+	println("DiamondTrap d4;\n d4=d2;");
+	DiamondTrap d4;
+	d4 = d2;
+	println("d4 name:" << d4.getName());
+
+
+	println("");
+	println("Destructor cascade:");
 }

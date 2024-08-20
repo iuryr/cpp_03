@@ -15,6 +15,25 @@ DiamondTrap::~DiamondTrap(void)
 	println("DiamondTrap destructor called.");
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap& obj)
+{
+	*this = obj;
+	println("DiamondTrap copy constructor called for " << obj._name);
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& obj)
+{
+	if (this != &obj)
+	{
+		this->_name = obj._name;
+		this->_hitPoints = obj._hitPoints;
+		this->_energyPoints = obj._energyPoints;
+		this->_attackDamage = obj._attackDamage;
+	}
+	println("Copy assignment operator called.");
+	return *this;
+}
+
 DiamondTrap::DiamondTrap(std::string name) 
 {
 	ClapTrap::_name = name + "_clap_name";
