@@ -55,12 +55,12 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (isAlive() == false)
 	{
-		println("ClapTrap " << this->_name << "can't attack cuz he's DED.");
+		println("ClapTrap " << this->_name << " can't attack cuz he's DED.");
 		return;
 	}
 	if (hasEnergy() == false)
 	{
-		println("ClapTrap " << this->_name << "can't attack cuz he has no energy");
+		println("ClapTrap " << this->_name << " can't attack cuz he has no energy");
 		return;
 	}
 
